@@ -10,11 +10,11 @@
 
 点击下面的订阅链接，路由将自动导入 App 。该功能目前仅支持 iOS, macOS 和 Android 。
 
-中国大陆 [CNRouting](onexray://onexray.com/sub/add?url=https%3A%2F%2Fgithub.com%2FOneXray%2FRouting%2Fraw%2Frefs%2Fheads%2Fmain%2Fcn.txt#CNRouting)
+<a href="onexray://onexray.com/sub/add?url=https%3A%2F%2Fgithub.com%2FOneXray%2FRouting%2Fraw%2Frefs%2Fheads%2Fmain%2Fcn.txt#CNRouting">中国大陆 CNRouting</a>
 
-伊朗 [IRRouting](onexray://onexray.com/sub/add?url=https%3A%2F%2Fgithub.com%2FOneXray%2FRouting%2Fraw%2Frefs%2Fheads%2Fmain%2Fir.txt#IRRouting)
+<a href="onexray://onexray.com/sub/add?url=https%3A%2F%2Fgithub.com%2FOneXray%2FRouting%2Fraw%2Frefs%2Fheads%2Fmain%2Fir.txt#IRRouting">伊朗 IRRouting</a>
 
-俄罗斯 [RURouting](onexray://onexray.com/sub/add?url=https%3A%2F%2Fgithub.com%2FOneXray%2FRouting%2Fraw%2Frefs%2Fheads%2Fmain%2Fru.txt#RURouting)
+<a href="onexray://onexray.com/sub/add?url=https%3A%2F%2Fgithub.com%2FOneXray%2FRouting%2Fraw%2Frefs%2Fheads%2Fmain%2Fru.txt#RURouting">俄罗斯 RURouting</a>
 
 ### 通过剪贴板导入
 
