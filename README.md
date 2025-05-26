@@ -11,13 +11,7 @@ Note:
 
 ### One-click import
 
-Click the subscription link below and the routes will be automatically imported into the App. This feature currently only supports iOS, macOS and Android.
-
-<a href="onexray://onexray.com/sub/add?url=https%3A%2F%2Fgithub.com%2FOneXray%2FRouting%2Fraw%2Frefs%2Fheads%2Fmain%2Fcn.txt#CNRouting">Mainland China CNRouting</a>
-
-<a href="onexray://onexray.com/sub/add?url=https%3A%2F%2Fgithub.com%2FOneXray%2FRouting%2Fraw%2Frefs%2Fheads%2Fmain%2Fir.txt#IRRouting">IRAN IRRouting</a>
-
-<a href="onexray://onexray.com/sub/add?url=https%3A%2F%2Fgithub.com%2FOneXray%2FRouting%2Fraw%2Frefs%2Fheads%2Fmain%2Fru.txt#RURouting">Russian RURouting</a>
+[One-click import](https://onexray.com/docs/routing/)
 
 ### Import via Clipboard
 
