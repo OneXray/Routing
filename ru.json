@@ -1,0 +1,54 @@
+{
+  "name": "RussiaDirect",
+  "dns": {
+    "servers": [
+      {
+        "tag": "GoogleDns",
+        "address": "8.8.8.8",
+        "domains": [
+          "ext:RussiaGeoSite.dat:RU-BLOCKED-ALL"
+        ],
+        "queryStrategy": "UseIPv4"
+      },
+      {
+        "tag": "Quad9Dns",
+        "address": "9.9.9.9",
+        "queryStrategy": "UseIPv4"
+      }
+    ],
+    "queryStrategy": "UseIPv4",
+    "tag": "dnsQuery"
+  },
+  "routing": {
+    "domainStrategy": "IpIfNonMatch",
+    "rules": [
+      {
+        "inboundTag": [
+          "GoogleDns"
+        ],
+        "outboundTag": "proxy",
+        "ruleTag": "GoogleDns"
+      },
+      {
+        "domain": [
+          "ext:RussiaGeoSite.dat:RU-BLOCKED-ALL"
+        ],
+        "outboundTag": "proxy",
+        "ruleTag": "RuBlockedDomainProxy"
+      },
+      {
+        "ip": [
+          "ext:RussiaGeoIP.dat:RU-BLOCKED",
+          "ext:RussiaGeoIP.dat:RU-BLOCKED-COMMUNITY"
+        ],
+        "outboundTag": "proxy",
+        "ruleTag": "RuBlockedIPProxy"
+      },
+      {
+        "port": "1-65534",
+        "outboundTag": "direct",
+        "ruleTag": "FinalDirect"
+      }
+    ]
+  }
+}

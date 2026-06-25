@@ -1,0 +1,53 @@
+{
+  "name": "大陆直连",
+  "dns": {
+    "servers": [
+      {
+        "tag": "GoogleDns",
+        "address": "8.8.8.8",
+        "queryStrategy": "UseIPv4"
+      },
+      {
+        "tag": "alidns",
+        "address": "223.5.5.5",
+        "domains": [
+          "ext:EnhancedGeoSite.dat:PRIVATE",
+          "ext:EnhancedGeoSite.dat:APPLE",
+          "ext:EnhancedGeoSite.dat:CN"
+        ],
+        "queryStrategy": "UseIPv4"
+      }
+    ],
+    "queryStrategy": "UseIPv4",
+    "tag": "dnsQuery"
+  },
+  "routing": {
+    "domainStrategy": "IpIfNonMatch",
+    "rules": [
+      {
+        "inboundTag": [
+          "alidns"
+        ],
+        "outboundTag": "direct",
+        "ruleTag": "alidns"
+      },
+      {
+        "domain": [
+          "ext:EnhancedGeoSite.dat:PRIVATE",
+          "ext:EnhancedGeoSite.dat:APPLE",
+          "ext:EnhancedGeoSite.dat:CN"
+        ],
+        "outboundTag": "direct",
+        "ruleTag": "CNDomainDirect"
+      },
+      {
+        "ip": [
+          "ext:EnhancedGeoIP.dat:PRIVATE",
+          "ext:EnhancedGeoIP.dat:CN"
+        ],
+        "outboundTag": "direct",
+        "ruleTag": "CNIPDirect"
+      }
+    ]
+  }
+}

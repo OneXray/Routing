@@ -1,0 +1,51 @@
+{
+  "name": "IranDirect",
+  "dns": {
+    "servers": [
+      {
+        "tag": "GoogleDns",
+        "address": "8.8.8.8",
+        "queryStrategy": "UseIPv4"
+      },
+      {
+        "tag": "IranDns",
+        "address": "5.200.200.200",
+        "domains": [
+          "ext:IranGeoSite.dat:ALL",
+          "ext:IranGeoSite.dat:IR"
+        ],
+        "queryStrategy": "UseIPv4"
+      }
+    ],
+    "queryStrategy": "UseIPv4",
+    "tag": "dnsQuery"
+  },
+  "routing": {
+    "domainStrategy": "IpIfNonMatch",
+    "rules": [
+      {
+        "inboundTag": [
+          "IranDns"
+        ],
+        "outboundTag": "direct",
+        "ruleTag": "IranDns"
+      },
+      {
+        "domain": [
+          "ext:IranGeoSite.dat:ALL",
+          "ext:IranGeoSite.dat:IR"
+        ],
+        "outboundTag": "direct",
+        "ruleTag": "IRDomainDirect"
+      },
+      {
+        "ip": [
+          "geoip:PRIVATE",
+          "geoip:IR"
+        ],
+        "outboundTag": "direct",
+        "ruleTag": "IranIPDirect"
+      }
+    ]
+  }
+}

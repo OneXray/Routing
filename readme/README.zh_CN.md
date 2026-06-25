@@ -1,49 +1,60 @@
-# OneXray 增强路由
+# OneXray 路由模板
 
-注意：
-1. 所有增强路由均不适合导入 iOS 。
-2. 导入时需要从 github 下载规则数据，请确保可以访问 [https://raw.githubusercontent.com/](https://raw.githubusercontent.com/) ，否则导入将失败。
+[English](../README.md) | [Русский](./README.ru_RU.md)
 
-## 如何使用
+本仓库提供 OneXray 可手动导入的 Xray Setting JSON 模板。这些文件不是订阅源，也不再使用已经移除的 OneXray App 专用分享协议。
 
-### 一键导入
+## 注意
 
-[一键导入](https://onexray.com/zh/docs/routing/)
+1. 保存模板前，需要先添加模板依赖的 GeoData。
+2. JSON 文件是 Xray Setting 模板，不是完整的 Raw Json 节点配置，不包含代理节点。
+3. OneXray 启动 VPN 时会将当前选中的节点注入为 `proxy`。
 
-### 通过剪贴板导入
+## 需要添加的 GeoData
 
-根据您所在的位置，复制下面的链接，然后打开 App 的主页，点击右上角的“+”按钮，选择“读取剪切板”。
+打开 OneXray，进入 `Core > GeoData > Add`，然后根据所在地区添加对应数据。
 
-中国大陆
+### 中国大陆
+
+| Name | Type | URL |
+| --- | --- | --- |
+| `EnhancedGeoSite` | `domain` | `https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat` |
+| `EnhancedGeoIP` | `ip` | `https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat` |
+
+### 伊朗
+
+| Name | Type | URL |
+| --- | --- | --- |
+| `IranGeoSite` | `domain` | `https://github.com/bootmortis/iran-hosted-domains/releases/latest/download/iran.dat` |
+
+### 俄罗斯
+
+| Name | Type | URL |
+| --- | --- | --- |
+| `RussiaGeoSite` | `domain` | `https://raw.githubusercontent.com/runetfreedom/russia-v2ray-rules-dat/release/geosite.dat` |
+| `RussiaGeoIP` | `ip` | `https://raw.githubusercontent.com/runetfreedom/russia-v2ray-rules-dat/release/geoip.dat` |
+
+## 导入
+
+1. 打开下面对应地区的模板链接，复制 JSON 内容。
+2. 在 OneXray 中进入 `Core > Xray Settings`。
+3. 点击 `Add`，然后打开 `Raw Edit`。
+4. 粘贴 JSON 内容并保存，然后选择新建的 Xray Setting。
+
+中国大陆：
+
+```text
+https://github.com/OneXray/Routing/raw/refs/heads/main/cn.json
 ```
-https://github.com/OneXray/Routing/raw/refs/heads/main/cn.txt#CNRouting
+
+伊朗：
+
+```text
+https://github.com/OneXray/Routing/raw/refs/heads/main/ir.json
 ```
 
-伊朗
-```
-https://github.com/OneXray/Routing/raw/refs/heads/main/ir.txt#IRRouting
-```
+俄罗斯：
 
-俄罗斯
-```
-https://github.com/OneXray/Routing/raw/refs/heads/main/ru.txt#RURouting
-```
-
-### 手动输入
-
-根据您所在的位置，复制下面的链接，然后打开 App 的主页，点击右上角的“+”按钮，选择“订阅链接”，将链接粘贴至输入框。
-
-中国大陆
-```
-https://github.com/OneXray/Routing/raw/refs/heads/main/cn.txt
-```
-
-伊朗
-```
-https://github.com/OneXray/Routing/raw/refs/heads/main/ir.txt
-```
-
-俄罗斯
-```
-https://github.com/OneXray/Routing/raw/refs/heads/main/ru.txt
+```text
+https://github.com/OneXray/Routing/raw/refs/heads/main/ru.json
 ```
