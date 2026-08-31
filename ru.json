@@ -45,7 +45,7 @@
         "ruleTag": "RuBlockedIPProxy"
       },
       {
-        "port": "1-65534",
+        "network": "tcp,udp",
         "outboundTag": "direct",
         "ruleTag": "FinalDirect"
       }
