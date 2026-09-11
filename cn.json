@@ -1,52 +1,45 @@
 {
-  "name": "大陆直连",
+  "name": "Mainland China Direct",
   "dns": {
     "servers": [
       {
-        "tag": "GoogleDns",
-        "address": "8.8.8.8",
-        "queryStrategy": "UseIPv4"
-      },
-      {
-        "tag": "alidns",
-        "address": "223.5.5.5",
-        "domains": [
-          "ext:EnhancedGeoSite.dat:PRIVATE",
-          "ext:EnhancedGeoSite.dat:APPLE",
-          "ext:EnhancedGeoSite.dat:CN"
-        ],
-        "queryStrategy": "UseIPv4"
+        "tag": "app-dns-direct",
+        "address": "223.5.5.5"
       }
-    ],
-    "queryStrategy": "UseIPv4",
-    "tag": "dnsQuery"
+    ]
   },
+  "outbounds": [{}],
   "routing": {
-    "domainStrategy": "IpIfNonMatch",
+    "domainStrategy": "IPIfNonMatch",
     "rules": [
       {
-        "inboundTag": [
-          "alidns"
-        ],
-        "outboundTag": "direct",
-        "ruleTag": "alidns"
-      },
-      {
+        "ruleTag": "Direct Mainland China Domains",
         "domain": [
           "ext:EnhancedGeoSite.dat:PRIVATE",
           "ext:EnhancedGeoSite.dat:APPLE",
           "ext:EnhancedGeoSite.dat:CN"
         ],
-        "outboundTag": "direct",
-        "ruleTag": "CNDomainDirect"
+        "outboundTag": "direct"
       },
       {
+        "ruleTag": "Direct Mainland China IPs",
         "ip": [
           "ext:EnhancedGeoIP.dat:PRIVATE",
           "ext:EnhancedGeoIP.dat:CN"
         ],
-        "outboundTag": "direct",
-        "ruleTag": "CNIPDirect"
+        "outboundTag": "direct"
+      }
+    ]
+  },
+  "geodata": {
+    "assets": [
+      {
+        "file": "EnhancedGeoSite.dat",
+        "url": "https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat"
+      },
+      {
+        "file": "EnhancedGeoIP.dat",
+        "url": "https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat"
       }
     ]
   }

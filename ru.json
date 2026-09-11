@@ -1,53 +1,51 @@
 {
-  "name": "RussiaDirect",
+  "name": "Russia Direct",
   "dns": {
     "servers": [
       {
-        "tag": "GoogleDns",
-        "address": "8.8.8.8",
-        "domains": [
-          "ext:RussiaGeoSite.dat:RU-BLOCKED-ALL"
-        ],
-        "queryStrategy": "UseIPv4"
-      },
-      {
-        "tag": "Quad9Dns",
-        "address": "9.9.9.9",
-        "queryStrategy": "UseIPv4"
+        "tag": "app-dns-direct",
+        "address": "9.9.9.9"
       }
-    ],
-    "queryStrategy": "UseIPv4",
-    "tag": "dnsQuery"
+    ]
   },
+  "outbounds": [{}],
   "routing": {
-    "domainStrategy": "IpIfNonMatch",
+    "domainStrategy": "IPIfNonMatch",
     "rules": [
       {
-        "inboundTag": [
-          "GoogleDns"
-        ],
-        "outboundTag": "proxy",
-        "ruleTag": "GoogleDns"
-      },
-      {
+        "ruleTag": "Proxy Blocked Domains",
         "domain": [
           "ext:RussiaGeoSite.dat:RU-BLOCKED-ALL"
         ],
-        "outboundTag": "proxy",
-        "ruleTag": "RuBlockedDomainProxy"
+        "balancerTag": "proxy"
       },
       {
+        "ruleTag": "Proxy Blocked IPs",
         "ip": [
           "ext:RussiaGeoIP.dat:RU-BLOCKED",
           "ext:RussiaGeoIP.dat:RU-BLOCKED-COMMUNITY"
         ],
-        "outboundTag": "proxy",
-        "ruleTag": "RuBlockedIPProxy"
+        "balancerTag": "proxy"
       },
       {
-        "network": "tcp,udp",
-        "outboundTag": "direct",
-        "ruleTag": "FinalDirect"
+        "ruleTag": "Direct Remaining IPs",
+        "ip": [
+          "0.0.0.0/0",
+          "::/0"
+        ],
+        "outboundTag": "direct"
+      }
+    ]
+  },
+  "geodata": {
+    "assets": [
+      {
+        "file": "RussiaGeoSite.dat",
+        "url": "https://raw.githubusercontent.com/runetfreedom/russia-v2ray-rules-dat/release/geosite.dat"
+      },
+      {
+        "file": "RussiaGeoIP.dat",
+        "url": "https://raw.githubusercontent.com/runetfreedom/russia-v2ray-rules-dat/release/geoip.dat"
       }
     ]
   }

@@ -1,50 +1,40 @@
 {
-  "name": "IranDirect",
+  "name": "Iran Direct",
   "dns": {
     "servers": [
       {
-        "tag": "GoogleDns",
-        "address": "8.8.8.8",
-        "queryStrategy": "UseIPv4"
-      },
-      {
-        "tag": "IranDns",
-        "address": "5.200.200.200",
-        "domains": [
-          "ext:IranGeoSite.dat:ALL",
-          "ext:IranGeoSite.dat:IR"
-        ],
-        "queryStrategy": "UseIPv4"
+        "tag": "app-dns-direct",
+        "address": "5.200.200.200"
       }
-    ],
-    "queryStrategy": "UseIPv4",
-    "tag": "dnsQuery"
+    ]
   },
+  "outbounds": [{}],
   "routing": {
-    "domainStrategy": "IpIfNonMatch",
+    "domainStrategy": "IPIfNonMatch",
     "rules": [
       {
-        "inboundTag": [
-          "IranDns"
-        ],
-        "outboundTag": "direct",
-        "ruleTag": "IranDns"
-      },
-      {
+        "ruleTag": "Direct Iran Domains",
         "domain": [
           "ext:IranGeoSite.dat:ALL",
           "ext:IranGeoSite.dat:IR"
         ],
-        "outboundTag": "direct",
-        "ruleTag": "IRDomainDirect"
+        "outboundTag": "direct"
       },
       {
+        "ruleTag": "Direct Iran IPs",
         "ip": [
           "geoip:PRIVATE",
           "geoip:IR"
         ],
-        "outboundTag": "direct",
-        "ruleTag": "IranIPDirect"
+        "outboundTag": "direct"
+      }
+    ]
+  },
+  "geodata": {
+    "assets": [
+      {
+        "file": "IranGeoSite.dat",
+        "url": "https://github.com/bootmortis/iran-hosted-domains/releases/latest/download/iran.dat"
       }
     ]
   }
