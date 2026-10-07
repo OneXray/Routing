@@ -19,9 +19,9 @@
 
 ## Импорт
 
-1. Скачайте JSON для [материкового Китая](https://raw.githubusercontent.com/OneXray/Routing/main/cn.json),
-   [Ирана](https://raw.githubusercontent.com/OneXray/Routing/main/ir.json) или
-   [России](https://raw.githubusercontent.com/OneXray/Routing/main/ru.json).
+1. Скачайте JSON для [материкового Китая](https://raw.githubusercontent.com/YuanDevTeam/Routing/main/cn.json),
+   [Ирана](https://raw.githubusercontent.com/YuanDevTeam/Routing/main/ir.json) или
+   [России](https://raw.githubusercontent.com/YuanDevTeam/Routing/main/ru.json).
    Либо скопируйте всё содержимое JSON, а не ссылку на файл.
 2. На странице подключения откройте выбор способа маршрутизации трафика и
    создайте новый пользовательский маршрут.

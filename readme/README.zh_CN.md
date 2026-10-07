@@ -18,9 +18,9 @@
 
 ## 导入
 
-1. 下载[中国大陆](https://raw.githubusercontent.com/OneXray/Routing/main/cn.json)、
-   [伊朗](https://raw.githubusercontent.com/OneXray/Routing/main/ir.json)或
-   [俄罗斯](https://raw.githubusercontent.com/OneXray/Routing/main/ru.json)的 JSON 文件；
+1. 下载[中国大陆](https://raw.githubusercontent.com/YuanDevTeam/Routing/main/cn.json)、
+   [伊朗](https://raw.githubusercontent.com/YuanDevTeam/Routing/main/ir.json)或
+   [俄罗斯](https://raw.githubusercontent.com/YuanDevTeam/Routing/main/ru.json)的 JSON 文件；
    也可以复制完整的 JSON 内容，不要只复制下载链接。
 2. 在**连接**页打开**流量方式**，在**自定义路由**中选择**新建自定义路由**。
 3. 在编辑器中选择**导入文件**或**读取剪贴板**。OneXray 会下载模板声明的自定义

@@ -19,9 +19,9 @@ use two or three. The templates do not select servers or configure a final exit.
 
 ## Import
 
-1. Download the JSON for [Mainland China](https://raw.githubusercontent.com/OneXray/Routing/main/cn.json),
-   [Iran](https://raw.githubusercontent.com/OneXray/Routing/main/ir.json) or
-   [Russia](https://raw.githubusercontent.com/OneXray/Routing/main/ru.json).
+1. Download the JSON for [Mainland China](https://raw.githubusercontent.com/YuanDevTeam/Routing/main/cn.json),
+   [Iran](https://raw.githubusercontent.com/YuanDevTeam/Routing/main/ir.json) or
+   [Russia](https://raw.githubusercontent.com/YuanDevTeam/Routing/main/ru.json).
    Alternatively, copy the complete JSON content, not the download URL.
 2. On **Connect**, open **Traffic method** and select **New custom route** under
    **Custom Routing**.
